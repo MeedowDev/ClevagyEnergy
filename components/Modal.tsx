@@ -24,7 +24,7 @@ const NotificationPanel = ({ isVisible, cropName, onClose }: NotificationPanelPr
 	const handleCheckLogin = async () => {
 		await checkLoginStatus();
 		if (isLoggedIn) {
-			console.log("User is logged in");
+			console.log("User is logged in");		
 			navigation.navigate("MapScreen");  // Navigate to MapScreen if logged in
 		} else {
 			console.log("User is not logged in");
