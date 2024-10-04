@@ -1,0 +1,214 @@
+[33mcommit b12982bda3f0ab059176e4d959477b7924258b2a[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Merge: aa309fa 15ad9e5
+Author: stephanjosh/ChristLogic <stephanjoshua1@gmail.com>
+Date:   Fri Oct 4 09:52:44 2024 +0300
+
+    Merge branch 'main' of https://github.com/MeedowDev/ClevagyEnergy
+
+[33mcommit aa309fa375d54e911ec7e89c0226532fd7382b2a[m
+Author: stephanjosh/ChristLogic <stephanjoshua1@gmail.com>
+Date:   Fri Oct 4 09:51:40 2024 +0300
+
+    Map page finished successfully
+
+[33mcommit 15ad9e5c818ab7af8588cc0e10bd2e2e69fe9606[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: victorcodebase <victorkithinji@outlook.com>
+Date:   Fri Oct 4 06:26:41 2024 +0300
+
+    cropname route
+
+[33mcommit e4ea8f946de2b905fc7128f01002a98f70fa8bbb[m
+Author: victorcodebase <victorkithinji@outlook.com>
+Date:   Fri Oct 4 05:56:21 2024 +0300
+
+    grown crop crud ops
+
+[33mcommit 767e25a7cbc384eb410cf313e7a19e218b109b3c[m
+Author: victorcodebase <victorkithinji@outlook.com>
+Date:   Fri Oct 4 04:28:18 2024 +0300
+
+    persistent seed contex
+
+[33mcommit 1d1641ea1eca61c533b770a92d9fea5feea553e4[m
+Merge: c27bc1a 96c57d8
+Author: victorcodebase <victorkithinji@outlook.com>
+Date:   Fri Oct 4 01:14:09 2024 +0300
+
+    conflict resolve 1
+
+[33mcommit c27bc1acd97dad8b8a6be05d42b0abd30ef2e08b[m
+Author: victorcodebase <victorkithinji@outlook.com>
+Date:   Fri Oct 4 01:10:23 2024 +0300
+
+    seed data accessible
+
+[33mcommit 96c57d8188f90838442cec02eb651dcb3a8d1420[m
+Author: stephanjosh/ChristLogic <stephanjoshua1@gmail.com>
+Date:   Thu Oct 3 20:14:53 2024 +0300
+
+    Map errors debugged
+
+[33mcommit 6048dc58d8ed28b5bbe2b64c4e70ec317a8be381[m
+Merge: 9b473e6 bd924e1
+Author: stephanjosh/ChristLogic <stephanjoshua1@gmail.com>
+Date:   Thu Oct 3 19:17:44 2024 +0300
+
+    Maps completed
+
+[33mcommit 9b473e6586a5ec5e6321bbf45918d0d95afdc6bb[m
+Author: stephanjosh/ChristLogic <stephanjoshua1@gmail.com>
+Date:   Thu Oct 3 16:08:04 2024 +0300
+
+    Google maps implementation
+
+[33mcommit bd924e1f6ba9e3453acd22ae4b6f6e030c1d3ab1[m
+Author: victorcodebase <victorkithinji@outlook.com>
+Date:   Thu Oct 3 15:25:03 2024 +0300
+
+    db crud ops stable
+
+[33mcommit 2047034ab6d8e9b7854a5f462f6412e8ec81719c[m
+Author: victorcodebase <victorkithinji@outlook.com>
+Date:   Thu Oct 3 00:18:10 2024 +0300
+
+    user Auth
+
+[33mcommit bfee18160f89a2af7afb47e5cc428cbde17d0b95[m
+Author: victorcodebase <victorkithinji@outlook.com>
+Date:   Wed Oct 2 22:04:46 2024 +0300
+
+    db tables update, Specifics screen update
+
+[33mcommit 0e166d10d7f0d33a40b2f07cfacc47a172bdf5c1[m
+Author: victorcodebase <victorkithinji@outlook.com>
+Date:   Wed Oct 2 10:31:04 2024 +0300
+
+    database stable
+
+[33mcommit d931f4afa70e751a48f3642fadb8fed06edf57e5[m
+Merge: dd8f5a5 2f568da
+Author: victorcodebase <victorkithinji@outlook.com>
+Date:   Tue Oct 1 07:53:13 2024 +0300
+
+    merge resolve 2
+
+[33mcommit 2f568dadd432a29ffb76e389deea1cc6c3f25d6e[m
+Author: stephanjosh/ChristLogic <stephanjoshua1@gmail.com>
+Date:   Tue Oct 1 07:33:06 2024 +0300
+
+    Latest changees
+
+[33mcommit dd8f5a524ea62cc77a0ea2901ce4801646fa0999[m
+Merge: fe3c4a2 8df7750
+Author: victorcodebase <victorkithinji@outlook.com>
+Date:   Tue Oct 1 07:30:19 2024 +0300
+
+    conflicts resolve
+
+[33mcommit fe3c4a2e9c9b372cef7a44d23a8c9b4fac23ef68[m
+Author: victorcodebase <victorkithinji@outlook.com>
+Date:   Tue Oct 1 07:10:24 2024 +0300
+
+    localpaths
+
+[33mcommit 729a75fae0f1378e52958f444654f48e28d1295a[m
+Author: victorcodebase <victorkithinji@outlook.com>
+Date:   Tue Oct 1 05:52:20 2024 +0300
+
+    Specifics screen mady dynamic
+
+[33mcommit 23c6aa1c7222424c42a171a9e84a5ce82f167359[m
+Author: victorcodebase <victorkithinji@outlook.com>
+Date:   Tue Oct 1 05:22:28 2024 +0300
+
+    prediction simulation stable
+
+[33mcommit 2e3944f7e8c85c40a1cf2fe2245c732753d833f8[m
+Author: victorcodebase <victorkithinji@outlook.com>
+Date:   Tue Oct 1 02:39:51 2024 +0300
+
+    WatsonX AI response simulation
+
+[33mcommit 8df77507c951d483728eaa200b9ee1b9401a5f45[m
+Author: stephanjosh/ChristLogic <stephanjoshua1@gmail.com>
+Date:   Sun Sep 29 21:24:45 2024 +0300
+
+    Revert "Merge branch 'main' of https://github.com/MeedowDev/ClevagyEnergy"
+    
+    This reverts commit 2a3b0e213377be0e47b3879dc33f3ff19d104ea0, reversing
+    changes made to 94ae51b5001853378969b8e44df86bf7e0ec0d94.
+
+[33mcommit cb3ed4384ea2e42f5780d7882608fbfefc5bade6[m
+Author: stephanjosh/ChristLogic <stephanjoshua1@gmail.com>
+Date:   Sun Sep 29 21:20:34 2024 +0300
+
+    Save current changes before reverting
+
+[33mcommit 2a3b0e213377be0e47b3879dc33f3ff19d104ea0[m
+Merge: 94ae51b e8aaa22
+Author: stephanjosh/ChristLogic <stephanjoshua1@gmail.com>
+Date:   Sun Sep 29 20:44:32 2024 +0300
+
+    Merge branch 'main' of https://github.com/MeedowDev/ClevagyEnergy
+
+[33mcommit 94ae51b5001853378969b8e44df86bf7e0ec0d94[m
+Author: stephanjosh/ChristLogic <stephanjoshua1@gmail.com>
+Date:   Sun Sep 29 20:41:16 2024 +0300
+
+    The latest changes
+
+[33mcommit e8aaa227a56f4afe31401fe3b9731c29a7ad0b7c[m
+Author: victorcodebase <victorkithinji@outlook.com>
+Date:   Sun Sep 29 19:39:20 2024 +0300
+
+    Home page UI revamp
+
+[33mcommit 1a759e9604bc844138d9e0e1957fc5705b3f3005[m
+Author: victorcodebase <victorkithinji@outlook.com>
+Date:   Sat Sep 28 18:00:40 2024 +0300
+
+    unresponsive page apth resolve
+
+[33mcommit 28b166ee7066ed4860a78fc07b43b3d79f264392[m
+Author: victorcodebase <victorkithinji@outlook.com>
+Date:   Sat Sep 28 16:35:04 2024 +0300
+
+    menu patch
+
+[33mcommit 6681853040cfcd5a8e3920652339581a18115c60[m
+Author: victorcodebase <victorkithinji@outlook.com>
+Date:   Sat Sep 28 15:59:53 2024 +0300
+
+    navigation patch
+
+[33mcommit a0599234fff90570da6722adb42fdbad579ec962[m
+Author: victorcodebase <victorkithinji@outlook.com>
+Date:   Sat Sep 28 15:33:03 2024 +0300
+
+    mobile avigation
+
+[33mcommit be1039eb309dcd01b7fe4e9c70300135a18ac049[m
+Merge: cabb673 e945f7c
+Author: victorcodebase <victorkithinji@outlook.com>
+Date:   Sat Sep 28 00:41:45 2024 +0300
+
+    resolve conflicts
+
+[33mcommit cabb6734c858c21ae5024e8fc83a02340c8ce588[m
+Author: victorcodebase <victorkithinji@outlook.com>
+Date:   Sat Sep 28 00:39:26 2024 +0300
+
+    image card use local images
+
+[33mcommit e945f7cf73a0e8e603b4cf3e289979858332120f[m
+Merge: 3a8a128 401e901
+Author: stephanjosh/ChristLogic <stephanjoshua1@gmail.com>
+Date:   Fri Sep 27 14:04:07 2024 +0300
+
+    Merge branch 'main' of https://github.com/MeedowDev/ClevagyEnergy
+
+[33mcommit 3a8a128a7f49db4709a27da5dde08c0403831905[m
+Author: stephanjosh/ChristLogic <stephanjoshua1@gmail.com>
+Date:   Fri Sep 27 14:03:57 2024 +0300
+
+    Data refined
