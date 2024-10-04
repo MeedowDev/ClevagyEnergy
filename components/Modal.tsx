@@ -1,10 +1,11 @@
 // NotificationPanel.js
 import React, { useState } from "react";
 import tw, { style } from "twrnc";
-import { View, Text, StyleSheet, TouchableOpacity, TextInput } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, TextInput, ToastAndroid } from "react-native";
 import Modal from "react-native-modal";
 import { useAuth } from "../context/authContext";
 import { useNavigation } from "@react-navigation/native";
+import { saveCrop } from "../db/update";
 
 interface NotificationPanelProps {
 	isVisible: boolean;
@@ -13,32 +14,61 @@ interface NotificationPanelProps {
 }
 
 const NotificationPanel = ({ isVisible, cropName, onClose }: NotificationPanelProps) => {
-	const { isLoggedIn, login, checkLoginStatus } = useAuth();
+	const { isLoggedIn, logout, signup, signin, checkLoginStatus, updateGrowingCropsContext, user } = useAuth();
 	const [username, setUsername] = useState("");
 	const [email, setEmail] = useState("");
 	const [location, setLocation] = useState("");
-	const [showLoginForm, setShowLoginForm] = useState(false); // To toggle login form visibility
+	const [showLoginForm, setShowLoginForm] = useState(false); 
 	const [action, setAction] = useState(""); // To store the action to be performed after login
-	const navigation = useNavigation();  // Correctly getting the navigation object
+	const [isSigningIn, setIsSigningIn] = useState(false);
+
+	const navigation = useNavigation<any>();  
 
 	const handleCheckLogin = async () => {
 		await checkLoginStatus();
-		if (isLoggedIn) {
-			console.log("User is logged in");		
-			navigation.navigate("MapScreen");  // Navigate to MapScreen if logged in
+		if (isLoggedIn ) {
+			console.log("User is logged in");
+			navigation.navigate("MapScreen"); 
+
+			return true;
 		} else {
 			console.log("User is not logged in");
 			setShowLoginForm(true);
+			return false
 		}
 	};
 
+	const handleCropSave = async (navigate: boolean) => {
+		await checkLoginStatus();
+		if (!user?.id) {
+			console.log("User id", user?.id);
+			setShowLoginForm(true);
+			return;
+		}
+		const registerCrop = await saveCrop(cropName, user.id);
+		if (registerCrop === "success") {
+			await updateGrowingCropsContext();
+			ToastAndroid.show(
+				"Success! We've registered youll be growing this crop! You will be receiving updates on how to grow it.",
+				ToastAndroid.LONG
+			);
+			if (navigate) {
+				navigation.navigate("MapScreen", { crop: cropName });
+			}
+		} else {
+			ToastAndroid.show(registerCrop, ToastAndroid.SHORT);
+		}
+	}
+
 	const handleSignup = async () => {
-		await login(username, email, location);
-		setShowLoginForm(false); // Hide the form after signup
+		await signup(username, email, location);
+		setShowLoginForm(false); 
 	};
 	const closeForm = () => {
 		setShowLoginForm(false);
 	};
+
+
 	return (
 		<Modal
 			isVisible={isVisible}
@@ -52,8 +82,8 @@ const NotificationPanel = ({ isVisible, cropName, onClose }: NotificationPanelPr
 				onClose();
 				closeForm();
 			}}
-			animationIn="slideInUp" // Animation for modal appearing
-			animationOut="slideOutDown" // Animation for modal disappearing
+			animationIn="slideInUp" 
+			animationOut="slideOutDown"
 		>
 			<View style={styles.panel}>
 				<Text style={styles.title}>Will you be planting this crop this season?</Text>
@@ -64,16 +94,75 @@ const NotificationPanel = ({ isVisible, cropName, onClose }: NotificationPanelPr
 
 				{showLoginForm ? (
 					<>
-						<Text style={[styles.title, tw`mt-4`]}>Please Login to {action}</Text>
-						<TextInput style={styles.input} placeholder="Username" value={username} onChangeText={setUsername} />
-						<TextInput style={styles.input} placeholder="Email" value={email} onChangeText={setEmail} />
-						<TextInput style={styles.input} placeholder="Location " value={location} onChangeText={setLocation} />
-						<TouchableOpacity
-							style={tw`bg-[#778B4C] h-15 rounded-3xl justify-center items-center my-3`}
-							onPress={handleSignup}
-						>
-							<Text style={[styles.buttonText, tw`text-white`]}>Complete signup and complete action</Text>
-						</TouchableOpacity>
+						<View>
+							{isSigningIn ? (
+								<>
+									<Text style={[styles.title, tw`mt-4`]}>Please Login to {action}</Text>
+									<View style={tw`flex flex-row mb-2`}>
+										<Text>I case you dont have an account </Text>
+										<TouchableOpacity onPress={() => setIsSigningIn(false)}>
+											<Text style={tw`text-blue-600 underline`}>
+												Click here to create your account
+											</Text>
+										</TouchableOpacity>
+									</View>
+
+									<TextInput
+										style={styles.input}
+										placeholder="Email"
+										value={email}
+										onChangeText={setEmail}
+									/>
+
+									<TouchableOpacity
+										style={tw`bg-[#778B4C] h-15 rounded-3xl justify-center items-center my-3`}
+										onPress={handleSignup}
+									>
+										<Text style={[styles.buttonText, tw`text-white`]}>
+											Enter your account and complete action
+										</Text>
+									</TouchableOpacity>
+								</>
+							) : (
+								<>
+									<Text style={[styles.title, tw`mt-4`]}>Please Login to {action}</Text>
+									<View style={tw`flex flex-row mb-2`}>
+										<Text>Already have an account? </Text>
+										<TouchableOpacity onPress={() => setIsSigningIn(true)}>
+											<Text style={tw`text-blue-600 underline`}>
+												Click here to login into your account
+											</Text>
+										</TouchableOpacity>
+									</View>
+									<TextInput
+										style={styles.input}
+										placeholder="Username"
+										value={username}
+										onChangeText={setUsername}
+									/>
+									<TextInput
+										style={styles.input}
+										placeholder="Email"
+										value={email}
+										onChangeText={setEmail}
+									/>
+									<TextInput
+										style={styles.input}
+										placeholder="Location "
+										value={location}
+										onChangeText={setLocation}
+									/>
+									<TouchableOpacity
+										style={tw`bg-[#778B4C] h-15 rounded-3xl justify-center items-center my-3`}
+										onPress={handleSignup}
+									>
+										<Text style={[styles.buttonText, tw`text-white`]}>
+											Create a new account and complete action
+										</Text>
+									</TouchableOpacity>
+								</>
+							)}
+						</View>
 					</>
 				) : (
 					<View style={tw`flex flex-row justify-between my-[2rem]`}>
@@ -81,7 +170,8 @@ const NotificationPanel = ({ isVisible, cropName, onClose }: NotificationPanelPr
 							style={tw`bg-[#778B4C] h-15 rounded-3xl justify-center items-center w-[48%]`}
 							onPress={() => {
 								setAction("save crop and acquire its seeds");
-								handleCheckLogin();
+								handleCropSave(true);
+
 							}}
 						>
 							<Text style={[styles.buttonText, tw`text-white`]}>Save crop and acquire seeds</Text>
@@ -90,7 +180,7 @@ const NotificationPanel = ({ isVisible, cropName, onClose }: NotificationPanelPr
 							style={tw`bg-[white] border border-[#778B4C] h-15 rounded-3xl justify-center items-center w-[48%]`}
 							onPress={() => {
 								setAction("save the crop in your account");
-								handleCheckLogin();
+								handleCropSave(false);
 							}}
 						>
 							<Text style={styles.buttonText}>Only save crop</Text>

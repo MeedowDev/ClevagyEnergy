@@ -22,7 +22,8 @@ export default function MapScreen() {
   const [nearbyShops, setNearbyShops] = useState<Shop[]>([]); // Explicitly type state as an array of Shop
   const [selectedShop, setSelectedShop] = useState<Shop | null>(null); // Explicitly type state as Shop or null
   const [routeCoordinates, setRouteCoordinates] = useState<{ latitude: number; longitude: number }[]>([]); // Explicitly type route coordinates
-  const [distanceToShop, setDistanceToShop] = useState<number | null>(null); // Explicitly type state as number or null
+  const route = useRoute();
+  const { cropName } = route.params;
 
   // Simulate fetching nearby shops
   useEffect(() => {
