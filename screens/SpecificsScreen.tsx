@@ -8,6 +8,10 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "../types";
 import { COLORS } from "../constants/Colors";
 import { useRoute, RouteProp } from "@react-navigation/native";
+import promptHandled from "../api/promptModel";
+import { LocationObject } from "expo-location";
+import * as Location from 'expo-location'; // This imports both types and the namespace
+
 
 type SpecificsScreenNavigationProp = StackNavigationProp<RootStackParamList, "Home">;
 
@@ -22,6 +26,7 @@ type RouteParams = {
 	};
 };
 
+
 export default function SpecificsScreen({ navigation }: SpecificsScreenProps) {
 	const [isPanelVisible, setPanelVisible] = useState(false);
 	const route = useRoute<RouteProp<RouteParams, "params">>();
@@ -29,6 +34,7 @@ export default function SpecificsScreen({ navigation }: SpecificsScreenProps) {
 	const togglePanel = () => {
 		setPanelVisible(!isPanelVisible);
 	};
+
 	return (
 		<View style={tw`flex-1`}>
 			<ScrollView contentContainerStyle={tw`items-center`}>
